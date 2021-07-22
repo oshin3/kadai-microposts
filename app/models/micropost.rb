@@ -17,7 +17,7 @@ class Micropost < ApplicationRecord
   end
 
   def favoriting?(other_user)
-    self.favoritings.include?(other_user)
+    self.likes.include?(other_user)
   end
   # お気に入り機能ここまで
   

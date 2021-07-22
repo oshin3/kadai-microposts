@@ -40,9 +40,9 @@ class UsersController < ApplicationController
   end
   
   # お気に入り機能
-  def favoritings
+  def likes
     @user = User.find(params[:id])
-    @pagy, @favoritings = pagy(@user.favoritings)
+    @pagy, @likes = pagy(@user.likes)
     counts(@user)
   end
 

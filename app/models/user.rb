@@ -33,7 +33,7 @@ class User < ApplicationRecord
 
   # お気に入り機能
   has_many :favorites
-  has_many :favoritings, through: :favorites, source: :micropost
+  has_many :likes, through: :favorites, source: :micropost
   has_many :reverses_of_favorite, class_name: 'Favorite', foreign_key: 'micropost_id'
   # has_many :favoriters, through: :reverses_of_favorite, source: :user
 
@@ -49,6 +49,6 @@ class User < ApplicationRecord
   end
 
   def favoriting?(other_user)
-    self.favoritings.include?(other_user)
+    self.likes.include?(other_user)
   end
 end

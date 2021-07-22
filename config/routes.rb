@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   # お気に入り機能
   #resources :users, only: [:index, :show, :create] do
   #  member do
-      get :favoritings
+      get :likes
       get :favoriters
     end
   end
