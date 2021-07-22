@@ -38,6 +38,20 @@ class UsersController < ApplicationController
     @pagy, @followers = pagy(@user.followers)
     counts(@user)
   end
+  
+  # お気に入り機能
+  def favoritings
+    @user = User.find(params[:id])
+    @pagy, @favoritings = pagy(@user.favoritings)
+    counts(@user)
+  end
+
+  def favoriters
+    @user = User.find(params[:id])
+    @pagy, @favoriters = pagy(@user.favoriters)
+    counts(@user)
+  end
+  # お気に入り機能ここまで
 
   private
 
